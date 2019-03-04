@@ -1,3 +1,4 @@
+using System.Reflection;
 using NUnit.Framework;
 
 namespace UGF.Builder.Runtime.Tests
@@ -7,12 +8,12 @@ namespace UGF.Builder.Runtime.Tests
         [Test]
         public void Build()
         {
-            var method = GetType().GetMethod("BuildMethod");
+            MethodInfo method = GetType().GetMethod("BuildMethod");
             
             Assert.NotNull(method);
             
             var builder = new BuilderMethod(this, method);
-            var result = builder.Build(null);
+            object result = builder.Build(null);
             
             Assert.AreEqual(result, "result");
         }

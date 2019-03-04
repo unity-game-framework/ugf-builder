@@ -12,8 +12,9 @@ namespace UGF.Builder.Runtime.Tests.GameObjects
             var parent = new GameObject();
             var builder1 = new GameObjectBuilder(new GameObject());
             var builder2 = new GameObjectBuilderEmpty();
-            var gameObject1 = builder1.Build(parent.transform);
-            var gameObject2 = builder2.Build(parent.transform);
+            
+            GameObject gameObject1 = builder1.Build(parent.transform);
+            GameObject gameObject2 = builder2.Build(parent.transform);
             
             Assert.AreEqual(gameObject1.transform.parent, gameObject2.transform.parent);
             Assert.AreEqual(gameObject1.transform.position, gameObject2.transform.position);
@@ -26,8 +27,9 @@ namespace UGF.Builder.Runtime.Tests.GameObjects
             var parent = new GameObject();
             var builder1 = new GameObjectBuilder(new GameObject());
             var builder2 = new GameObjectBuilderEmpty();
-            var gameObject1 = builder1.Build(parent.transform, true);
-            var gameObject2 = builder2.Build(parent.transform, true);
+            
+            GameObject gameObject1 = builder1.Build(parent.transform, true);
+            GameObject gameObject2 = builder2.Build(parent.transform, true);
             
             Assert.AreEqual(gameObject1.transform.parent, gameObject2.transform.parent);
             Assert.AreEqual(gameObject1.transform.position, gameObject2.transform.position);
@@ -40,8 +42,9 @@ namespace UGF.Builder.Runtime.Tests.GameObjects
             var parent = new GameObject();
             var builder1 = new GameObjectBuilder(new GameObject());
             var builder2 = new GameObjectBuilderEmpty();
-            var gameObject1 = builder1.Build(parent.transform, false);
-            var gameObject2 = builder2.Build(parent.transform, false);
+            
+            GameObject gameObject1 = builder1.Build(parent.transform, false);
+            GameObject gameObject2 = builder2.Build(parent.transform, false);
             
             Assert.AreEqual(gameObject1.transform.parent, gameObject2.transform.parent);
             Assert.AreEqual(gameObject1.transform.position, gameObject2.transform.position);
@@ -54,8 +57,9 @@ namespace UGF.Builder.Runtime.Tests.GameObjects
             var parent = new GameObject();
             var builder1 = new GameObjectBuilder(new GameObject());
             var builder2 = new GameObjectBuilderEmpty();
-            var gameObject1 = builder1.Build(Vector3.one, Quaternion.Euler(Vector3.forward), parent.transform);
-            var gameObject2 = builder2.Build(Vector3.one, Quaternion.Euler(Vector3.forward), parent.transform);
+            
+            GameObject gameObject1 = builder1.Build(Vector3.one, Quaternion.Euler(Vector3.forward), parent.transform);
+            GameObject gameObject2 = builder2.Build(Vector3.one, Quaternion.Euler(Vector3.forward), parent.transform);
             
             Assert.AreEqual(gameObject1.transform.parent, gameObject2.transform.parent);
             Assert.AreEqual(gameObject1.transform.position, gameObject2.transform.position);

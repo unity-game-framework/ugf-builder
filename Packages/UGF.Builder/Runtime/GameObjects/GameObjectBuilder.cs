@@ -15,7 +15,7 @@ namespace UGF.Builder.Runtime.GameObjects
         {
             if (name == null) throw new ArgumentNullException(nameof(name));
             
-            var gameObject = Object.Instantiate(Source);
+            GameObject gameObject = Object.Instantiate(Source);
 
             gameObject.name = name;
             
@@ -24,11 +24,15 @@ namespace UGF.Builder.Runtime.GameObjects
 
         public GameObject Build(Transform parent)
         {
+            if (parent == null) throw new ArgumentNullException(nameof(parent));
+            
             return Object.Instantiate(Source, parent);
         }
 
         public GameObject Build(Transform parent, bool worldPositionStays)
         {
+            if (parent == null) throw new ArgumentNullException(nameof(parent));
+            
             return Object.Instantiate(Source, parent, worldPositionStays);
         }
 
@@ -39,6 +43,8 @@ namespace UGF.Builder.Runtime.GameObjects
 
         public GameObject Build(Vector3 position, Quaternion rotation, Transform parent)
         {
+            if (parent == null) throw new ArgumentNullException(nameof(parent));
+            
             return Object.Instantiate(Source, position, rotation, parent);
         }
     }

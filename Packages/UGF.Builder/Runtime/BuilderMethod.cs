@@ -14,7 +14,7 @@ namespace UGF.Builder.Runtime
             MethodInfo = methodInfo ?? throw new ArgumentNullException(nameof(methodInfo));
         }
 
-        public object Build(object[] arguments)
+        public virtual object Build(object[] arguments)
         {
             return MethodInfo.Invoke(Target, arguments);
         }

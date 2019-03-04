@@ -11,7 +11,7 @@ namespace UGF.Builder.Runtime
             Func = func ?? throw new ArgumentNullException(nameof(func));
         }
 
-        public TResult Build()
+        public virtual TResult Build()
         {
             return Func();
         }

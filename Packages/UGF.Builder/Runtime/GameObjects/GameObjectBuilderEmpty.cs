@@ -53,7 +53,7 @@ namespace UGF.Builder.Runtime.GameObjects
             if (parent == null) throw new ArgumentNullException(nameof(parent));
             
             var gameObject = new GameObject();
-            var transform = gameObject.transform;
+            Transform transform = gameObject.transform;
 
             transform.SetPositionAndRotation(position, rotation);
             transform.SetParent(parent);

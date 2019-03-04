@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Reflection;
+using NUnit.Framework;
 
 namespace UGF.Builder.Runtime.Tests
 {
@@ -60,7 +61,7 @@ namespace UGF.Builder.Runtime.Tests
         [Test]
         public void FindBuildMethod()
         {
-            var method = BuilderUtility.FindBuildMethod(typeof(Builder));
+            BuilderUtility.TryFindBuilderMethod(typeof(Builder), out MethodInfo method);
             
             Assert.NotNull(method);
             Assert.AreEqual("Build", method.Name);
@@ -70,7 +71,7 @@ namespace UGF.Builder.Runtime.Tests
         [Test]
         public void FindBuildMethod2()
         {
-            var method = BuilderUtility.FindBuildMethod(typeof(Builder2));
+            BuilderUtility.TryFindBuilderMethod(typeof(Builder2), out MethodInfo method);
             
             Assert.NotNull(method);
             Assert.AreEqual("Build", method.Name);
@@ -80,7 +81,7 @@ namespace UGF.Builder.Runtime.Tests
         [Test]
         public void FindBuildMethod3()
         {
-            var method = BuilderUtility.FindBuildMethod(typeof(Builder3));
+            BuilderUtility.TryFindBuilderMethod(typeof(Builder3), out MethodInfo method);
             
             Assert.Null(method);
         }
@@ -88,7 +89,7 @@ namespace UGF.Builder.Runtime.Tests
         [Test]
         public void FindBuildMethod4()
         {
-            var method = BuilderUtility.FindBuildMethod(typeof(Builder4));
+            BuilderUtility.TryFindBuilderMethod(typeof(Builder4), out MethodInfo method);
             
             Assert.Null(method);
         }

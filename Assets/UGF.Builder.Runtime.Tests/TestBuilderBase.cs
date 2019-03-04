@@ -25,7 +25,7 @@ namespace UGF.Builder.Runtime.Tests
         {
             var builder = new Builder();
             string result1 = builder.Build();
-            var result2 = builder.Build(null);
+            object result2 = builder.Build(null);
             
             Assert.AreEqual(result1, "result");
             Assert.AreEqual(result1, result2);
@@ -36,7 +36,7 @@ namespace UGF.Builder.Runtime.Tests
         {
             var builder = new Builder2();
             string result1 = builder.Build(0);
-            var result2 = builder.Build(new object[] { 0 });
+            object result2 = builder.Build(new object[] { 0 });
             
             Assert.AreEqual(result1, "result-0");
             Assert.AreEqual(result1, result2);

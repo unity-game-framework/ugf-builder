@@ -5,16 +5,28 @@ namespace UGF.Builder.Runtime
 {
     public abstract class BuilderBase : IBuilder
     {
-        public MethodInfo BuildMethod { get; }
-        
-        protected BuilderBase()
+        private MethodInfo m_buildMethod;
+     
+        public MethodInfo GetBuildMethod()
         {
-            BuildMethod = BuilderUtility.FindBuildMethod(GetType()) ?? throw new NullReferenceException("Build method not found.");
-        }
+            if (m_buildMethod == null)
+            {
+                if (BuilderUtility.TryFindBuilderMethod(GetType(), out MethodInfo methodInfo))
+                {
+                    m_buildMethod = methodInfo;
+                }
+                else
+                {
+                    throw new NullReferenceException("Build method not found.");
+                }    
+            }
 
-        public object Build(object[] arguments)
+            return m_buildMethod;
+        }
+        
+        public virtual object Build(object[] arguments)
         {
-            return BuildMethod.Invoke(this, arguments);
+            return GetBuildMethod().Invoke(this, arguments);
         }
     }
 }

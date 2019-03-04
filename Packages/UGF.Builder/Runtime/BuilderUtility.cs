@@ -1,28 +1,26 @@
 ﻿using System;
 using System.Reflection;
-using JetBrains.Annotations;
 
 namespace UGF.Builder.Runtime
 {
     public static class BuilderUtility
     {
-        [CanBeNull]
-        public static MethodInfo FindBuildMethod(Type type)
+        public static bool TryFindBuilderMethod(Type type, out MethodInfo methodInfo)
         {
             if (type == null) throw new ArgumentNullException(nameof(type));
             
-            var methods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance);
-            
-            MethodInfo result = null;
+            MethodInfo[] methods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance);
+
+            methodInfo = null;
             int count = -1;
 
             for (int i = 0; i < methods.Length; i++)
             {
-                var method = methods[i];
+                MethodInfo method = methods[i];
 
                 if (method.Name == "Build")
                 {
-                    var parameters = method.GetParameters();
+                    ParameterInfo[] parameters = method.GetParameters();
 
                     if (parameters.Length > count)
                     {
@@ -30,14 +28,14 @@ namespace UGF.Builder.Runtime
 
                         if (!isBaseBuild)
                         {
-                            result = method;
+                            methodInfo = method;
                             count = parameters.Length;   
                         }
                     }    
                 }
             }
 
-            return result;
+            return methodInfo != null;
         }
     }
 }

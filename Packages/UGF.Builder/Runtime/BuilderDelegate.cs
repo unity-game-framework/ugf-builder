@@ -11,7 +11,7 @@ namespace UGF.Builder.Runtime
             Delegate = @delegate ?? throw new ArgumentNullException(nameof(@delegate));
         }
 
-        public object Build(object[] arguments)
+        public virtual object Build(object[] arguments)
         {
             return Delegate.DynamicInvoke(arguments);
         }

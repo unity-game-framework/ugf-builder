@@ -9,7 +9,7 @@ namespace UGF.Builder.Runtime.Tests
         public void Build()
         {
             var builder = new BuilderDelegate((Func<string>)(() => "result"));
-            var result = builder.Build(null);
+            object result = builder.Build(null);
 
             Assert.AreEqual("result", result);
         }

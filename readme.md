@@ -4,7 +4,7 @@ UGF.Builder
 
 ## Info
 
-- **Version**: `0.0.1-preview`
+- **Version**: `1.0.0`
 - **Unity Version**: `2019.1.0`
 - **Scripting Runtime Version**: `.NET 4.x Equivalent`
 - **Api Compatibility Level**: `.NET Standard 2.0`
@@ -19,7 +19,7 @@ UGF.Builder
 
 ### Registries
 
-- [Stable][2] (N/A)
+- [Stable][2]
 - [Develop][3]
 
 ## Description

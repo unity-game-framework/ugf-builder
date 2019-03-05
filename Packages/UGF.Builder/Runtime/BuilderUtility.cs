@@ -3,8 +3,26 @@ using System.Reflection;
 
 namespace UGF.Builder.Runtime
 {
+    /// <summary>
+    /// Provides utilities for working with builders.
+    /// </summary>
     public static class BuilderUtility
     {
+        /// <summary>
+        /// Tries to find default builder method from the specified type.
+        /// <para>
+        /// Returns true if method was found, otherwise false.
+        /// </para>
+        /// <para>
+        /// The default builder method is:
+        /// <para> - Method with public non static access.</para>
+        /// <para> - Method named as "Build"; </para>
+        /// <para> - Method containing the most parameters; </para>
+        /// <para> - Method does not has one parameter with "Object Array" return type; </para>
+        /// </para>
+        /// </summary>
+        /// <param name="type">The type to find build method.</param>
+        /// <param name="methodInfo">The found method.</param>
         public static bool TryFindBuilderMethod(Type type, out MethodInfo methodInfo)
         {
             if (type == null) throw new ArgumentNullException(nameof(type));

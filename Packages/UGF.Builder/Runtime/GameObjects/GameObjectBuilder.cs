@@ -5,8 +5,15 @@ using Object = UnityEngine.Object;
 
 namespace UGF.Builder.Runtime.GameObjects
 {
+    /// <summary>
+    /// Represent builder that use source gameobject to instantiate.
+    /// </summary>
     public class GameObjectBuilder : ObjectBuilder<GameObject>, IGameObjectBuilder
     {
+        /// <summary>
+        /// Creates builder with the specified source gameobject.
+        /// </summary>
+        /// <param name="source">The source gameobject to instantiate.</param>
         public GameObjectBuilder(GameObject source) : base(source)
         {
         }

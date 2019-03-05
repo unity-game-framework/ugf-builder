@@ -3,24 +3,46 @@ using NUnit.Framework;
 
 namespace UGF.Builder.Runtime.Tests
 {
-    public class TestBuilderMethod
+    public class TestBuilderMethodInfo
     {
+        private class Target
+        {
+            public string BuildMethod()
+            {
+                return "result";
+            }
+
+            public static string BuildMethodStatic()
+            {
+                return "result_static";
+            }
+        }
+        
         [Test]
         public void Build()
         {
-            MethodInfo method = GetType().GetMethod("BuildMethod");
+            var target = new Target();
+            MethodInfo method = typeof(Target).GetMethod("BuildMethod");
             
             Assert.NotNull(method);
             
-            var builder = new BuilderMethod(this, method);
+            var builder = new BuilderMethodInfo(target, method);
             object result = builder.Build(null);
             
             Assert.AreEqual(result, "result");
         }
 
-        public string BuildMethod()
+        [Test]
+        public void BuildStatic()
         {
-            return "result";
+            MethodInfo method = typeof(Target).GetMethod("BuildMethodStatic");
+            
+            Assert.NotNull(method);
+            
+            var builder = new BuilderMethodInfo(method);
+            object result = builder.Build(null);
+            
+            Assert.AreEqual(result, "result_static");
         }
     }
 }

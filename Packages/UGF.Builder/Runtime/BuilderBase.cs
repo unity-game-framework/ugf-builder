@@ -3,11 +3,23 @@ using System.Reflection;
 
 namespace UGF.Builder.Runtime
 {
+    /// <summary>
+    /// The abstract builder base class.
+    /// <para>
+    /// This builder will find the default "Build" method implementation to support default "Build" method.
+    /// </para>
+    /// </summary>
     public abstract class BuilderBase : IBuilder
     {
         private MethodInfo m_buildMethod;
      
-        public MethodInfo GetBuildMethod()
+        /// <summary>
+        /// Gets the default build method.
+        /// <para>
+        /// Tries to find the default method builder with most parameters.
+        /// </para>
+        /// </summary>
+        public MethodInfo GetDefaultBuildMethod()
         {
             if (m_buildMethod == null)
             {
@@ -26,7 +38,7 @@ namespace UGF.Builder.Runtime
         
         public virtual object Build(object[] arguments)
         {
-            return GetBuildMethod().Invoke(this, arguments);
+            return GetDefaultBuildMethod().Invoke(this, arguments);
         }
     }
 }

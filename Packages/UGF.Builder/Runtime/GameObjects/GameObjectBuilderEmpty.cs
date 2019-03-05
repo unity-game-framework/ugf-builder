@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace UGF.Builder.Runtime.GameObjects
 {
+    /// <summary>
+    /// Represents builder that create empty gameobject.
+    /// </summary>
     public class GameObjectBuilderEmpty : BuilderBase, IGameObjectBuilder
     {
         public GameObject Build()

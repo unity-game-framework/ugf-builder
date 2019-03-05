@@ -1,5 +1,8 @@
 namespace UGF.Builder.Runtime
 {
+    /// <summary>
+    /// The abstract implementation of the builder with cached build result.
+    /// </summary>
     public abstract class BuilderCachedBase : BuilderBase, IBuilderCached
     {
         public object Cache { get; protected set; }

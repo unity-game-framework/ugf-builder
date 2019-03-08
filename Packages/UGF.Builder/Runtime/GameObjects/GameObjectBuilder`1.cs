@@ -6,49 +6,49 @@ using Object = UnityEngine.Object;
 namespace UGF.Builder.Runtime.GameObjects
 {
     /// <summary>
-    /// Represents builder that use source gameobject to instantiate.
+    /// Represents builder that use component from the gameobject to instantiate it.
     /// </summary>
-    public class GameObjectBuilder : ObjectBuilder<GameObject>, IGameObjectBuilder
+    public class GameObjectBuilder<TComponent> : ObjectBuilder<TComponent>, IGameObjectBuilder<TComponent> where TComponent : Component
     {
         /// <summary>
-        /// Creates builder with the specified source gameobject.
+        /// Creates builder with the specified component from the target gameobject.
         /// </summary>
-        /// <param name="source">The source gameobject to instantiate.</param>
-        public GameObjectBuilder(GameObject source) : base(source)
+        /// <param name="source">The component source from the target gameobject.</param>
+        public GameObjectBuilder(TComponent source) : base(source)
         {
         }
 
-        public GameObject Build(string name)
+        public TComponent Build(string name)
         {
             if (name == null) throw new ArgumentNullException(nameof(name));
-            
-            GameObject gameObject = Object.Instantiate(Source);
 
-            gameObject.name = name;
+            TComponent component = Object.Instantiate(Source);
+
+            component.gameObject.name = name;
             
-            return gameObject;
+            return component;
         }
 
-        public GameObject Build(Transform parent)
+        public TComponent Build(Transform parent)
         {
             if (parent == null) throw new ArgumentNullException(nameof(parent));
             
             return Object.Instantiate(Source, parent);
         }
 
-        public GameObject Build(Transform parent, bool worldPositionStays)
+        public TComponent Build(Transform parent, bool worldPositionStays)
         {
             if (parent == null) throw new ArgumentNullException(nameof(parent));
             
             return Object.Instantiate(Source, parent, worldPositionStays);
         }
 
-        public GameObject Build(Vector3 position, Quaternion rotation)
+        public TComponent Build(Vector3 position, Quaternion rotation)
         {
             return Object.Instantiate(Source, position, rotation);
         }
 
-        public GameObject Build(Vector3 position, Quaternion rotation, Transform parent)
+        public TComponent Build(Vector3 position, Quaternion rotation, Transform parent)
         {
             if (parent == null) throw new ArgumentNullException(nameof(parent));
             

@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Milestone](https://github.com/unity-game-framework/ugf-builder/milestone/0?closed=1)
 
 ### Added
-- Nothing.
+- `IGameObjectBuilder<T>` and `GameObjectBuilder<T>` to build gameobject from the source component. (#7)
 
 ### Changed
 - Nothing.

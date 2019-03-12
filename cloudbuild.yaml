@@ -10,7 +10,7 @@ steps:
   - '-c'
   - '-e'
   - |
-        _PACKAGE_PATH=$(find -name "UGF.*" -type d)
+        _PACKAGE_PATH=$(find -name "Packages/UGF.*" -type d)
         
         echo "Found package path '$$_PACKAGE_PATH'"
         

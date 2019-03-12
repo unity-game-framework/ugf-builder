@@ -3,7 +3,6 @@
     "displayName": "UGF.Builder",
     "version": "1.1.0-preview.3",
     "unity": "2019.1",
-    "type": "library",
     "description": "No description.",
     "author": {
         "name": "Unity Game Framework",

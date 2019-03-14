@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Milestone](https://github.com/unity-game-framework/ugf-builder/milestone/0?closed=1)
 
 ### Added
-- `IGameObjectBuilder<T>` and `GameObjectBuilder<T>` to build gameobject from the source component. (#7)
+- Nothing.
 
 ### Changed
 - Nothing.
@@ -25,6 +25,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 - Nothing.
+
+## 1.1.0 - 2019-03-14
+- [Commits](https://github.com/unity-game-framework/ugf-builder/compare/1.0.0...1.1.0)
+- [Milestone](https://github.com/unity-game-framework/ugf-builder/milestone/2?closed=1)
+
+### Added
+- `IGameObjectBuilder<T>` and `GameObjectBuilder<T>` to build gameobject from the source component. (#7)
 
 ## 1.0.0 - 2019-03-05
 - [Commits](https://github.com/unity-game-framework/ugf-builder/compare/3cb37e5...1.0.0)

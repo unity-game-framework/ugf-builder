@@ -1,4 +1,4 @@
-﻿namespace UGF.Builder.Runtime.Assets
+﻿namespace UGF.Builder.Runtime
 {
     public abstract class BuilderAsset<TResult> : BuilderAssetBase, IBuilder<TResult>
     {

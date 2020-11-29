@@ -1,4 +1,4 @@
-﻿namespace UGF.Builder.Runtime.Components
+﻿namespace UGF.Builder.Runtime
 {
     public abstract class BuilderComponent<TResult> : BuilderBase, IBuilder<TResult>
     {

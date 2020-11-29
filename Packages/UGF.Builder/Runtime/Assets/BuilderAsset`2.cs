@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace UGF.Builder.Runtime
+namespace UGF.Builder.Runtime.Assets
 {
-    public abstract class Builder<TArguments, TResult> : BuilderBase, IBuilder<TArguments, TResult>
+    public abstract class BuilderAsset<TArguments, TResult> : BuilderBase, IBuilder<TArguments, TResult>
     {
         private readonly Type m_type = typeof(TArguments);
 

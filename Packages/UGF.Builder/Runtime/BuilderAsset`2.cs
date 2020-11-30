@@ -2,7 +2,7 @@
 
 namespace UGF.Builder.Runtime
 {
-    public abstract class BuilderAsset<TArguments, TResult> : BuilderBase, IBuilder<TArguments, TResult>
+    public abstract class BuilderAsset<TArguments, TResult> : BuilderAssetBase, IBuilder<TArguments, TResult>
     {
         private readonly Type m_type = typeof(TArguments);
 

@@ -1,8 +1,9 @@
 ﻿using System;
+using UnityEngine;
 
 namespace UGF.Builder.Runtime
 {
-    public abstract class BuilderBase : IBuilder
+    public abstract class BuilderComponentBase : MonoBehaviour, IBuilder
     {
         public T Build<T>(object[] arguments)
         {

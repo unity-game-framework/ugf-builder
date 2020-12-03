@@ -1,13 +1,8 @@
-namespace UGF.Builder.Runtime
+﻿namespace UGF.Builder.Runtime
 {
-    /// <summary>
-    /// Represents builder without arguments and explicit build result.
-    /// </summary>
-    public interface IBuilder<out TResult> : IBuilder
+    public interface IBuilder<TResult> : IBuilder
     {
-        /// <summary>
-        /// Builds the object.
-        /// </summary>
+        T Build<T>() where T : TResult;
         TResult Build();
     }
 }

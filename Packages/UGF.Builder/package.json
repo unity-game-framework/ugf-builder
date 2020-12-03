@@ -1,25 +1,25 @@
 {
-    "name": "com.ugf.builder",
-    "displayName": "UGF.Builder",
-    "version": "1.1.0",
-    "unity": "2020.2",
-    "apiCompatibility": ".NET Standard 2.0",
-    "description": "Build pattern implementation.",
-    "author": {
-        "name": "Unity Game Framework",
-        "url": "https://github.com/unity-game-framework"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git://github.com/unity-game-framework/ugf-builder.git"
-    },
-    "changelogUrl": "https://github.com/unity-game-framework/ugf-builder/blob/master/changelog.md",
-    "licensesUrl": "https://github.com/unity-game-framework/ugf-builder/blob/master/license",
-    "publishConfig": {
-      "registry": "https://npm.pkg.github.com/@unity-game-framework"
-    },
-    "bintray": {
-      "registry": "https://api.bintray.com/content/unity-game-framework/public"
-    },
-    "dependencies": {}
+  "name": "com.ugf.builder",
+  "displayName": "UGF.Builder",
+  "version": "2.0.0",
+  "unity": "2020.2",
+  "apiCompatibility": ".NET Standard 2.0",
+  "description": "Build pattern implementation.",
+  "author": {
+    "name": "Unity Game Framework",
+    "url": "https://github.com/unity-game-framework"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/unity-game-framework/ugf-builder.git"
+  },
+  "changelogUrl": "https://github.com/unity-game-framework/ugf-builder/blob/master/changelog.md",
+  "licensesUrl": "https://github.com/unity-game-framework/ugf-builder/blob/master/license",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@unity-game-framework"
+  },
+  "bintray": {
+    "registry": "https://api.bintray.com/content/unity-game-framework/public"
+  },
+  "dependencies": {}
 }

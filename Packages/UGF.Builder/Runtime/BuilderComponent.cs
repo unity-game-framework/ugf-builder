@@ -1,6 +1,6 @@
 ﻿namespace UGF.Builder.Runtime
 {
-    public abstract class BuilderComponent<TResult> : BuilderBase, IBuilder<TResult>
+    public abstract class BuilderComponent<TResult> : BuilderComponentBase, IBuilder<TResult>
     {
         public T Build<T>() where T : TResult
         {

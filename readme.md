@@ -2,9 +2,9 @@
 
 UGF.Builder
 
-## Info
+## Information
 
-- **Version**: `2.0.1`
+- **Version**: `2.0.2`
 - **Unity**: `2020.3`
 - **API Compatibility Level**: `.NET Standard 2.0`
 

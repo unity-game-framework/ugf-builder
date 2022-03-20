@@ -1,7 +1,7 @@
 {
   "name": "com.ugf.builder",
   "displayName": "UGF.Builder",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "unity": "2020.3",
   "apiCompatibility": ".NET Standard 2.0",
   "description": "Build pattern implementation.",

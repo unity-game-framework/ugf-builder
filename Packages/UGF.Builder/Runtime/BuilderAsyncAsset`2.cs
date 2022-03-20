@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace UGF.Builder.Runtime
 {
-    public abstract class BuilderAsyncAsset<TArguments, TResult> : BuilderAsyncBase, IBuilderAsync<TArguments, TResult>
+    public abstract class BuilderAsyncAsset<TArguments, TResult> : BuilderAsyncAssetBase, IBuilderAsync<TArguments, TResult>
     {
         private readonly Type m_type = typeof(TArguments);
 
